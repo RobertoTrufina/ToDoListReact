@@ -16,13 +16,25 @@ function Home() {
         setTodos(filtred)
     }
 
+    const editTodo = (id, editedText) => {
+        var todosArray = [...todos]
+
+        for (var i in todosArray) {
+            if (todosArray[i].id == id) {
+                todosArray[i].text = editedText
+            }
+        }
+
+        setTodos(todosArray)
+    }
+
     return (
         <Container maxWidth='xs' style={{ marginTop: '2em' }}>
             <Form addTodo={addTodo} />
             <List sx={{ marginTop: '1em' }}>
                 {todos.map((todo) => (
                     <div key={todo.id} style={{ marginTop: '1em' }}>
-                        <TodoItem  todo={todo} deleteTodo={deleteTodo} />
+                        <TodoItem editTodo={editTodo} todo={todo} deleteTodo={deleteTodo} />
                     </div>
                 ))}
             </List>

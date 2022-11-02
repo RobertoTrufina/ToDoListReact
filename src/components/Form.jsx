@@ -11,7 +11,7 @@ export default function Form({ addTodo }) {
         const todoObj = { text: text, id: id }
         setId(id + 1)
         addTodo(todoObj)
-        document.getElementById('outlined-basic').value=null
+        document.getElementById('outlined-basic').value = null
 
     }
 
@@ -24,9 +24,9 @@ export default function Form({ addTodo }) {
                         label="Tarefa"
                         variant="outlined"
                         fullWidth
-                        onChange={(e) => setText(e.target.value)}
+                        onChange={(e) => setText(e.target.value)}                        
                     />
-                    <Button variant="text" onClick={() => todoCreate(text)}>Add</Button>
+                    <Button variant="text" onClick={() => todoCreate(text) }>Add</Button>
                 </div>
             </Paper>
         </div>
